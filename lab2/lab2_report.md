@@ -85,18 +85,20 @@ jobs:
 
       - name: Deploy (placeholder)
         run: echo "Deploy step executed successfully."
+```
+___
 
-4. Тестирование CI/CD пайплайна
+#### 4. Тестирование CI/CD пайплайна
 
 Для проверки работы пайплайна был выполнен коммит в ветку main.
 После этого во вкладке Actions запустился workflow Docker CI/CD.
 
 В логах были успешно выполнены шаги:
-	•	Checkout code — репозиторий успешно загружен;
-	•	Set up Docker Buildx — сборочная среда настроена;
-	•	Log in to Docker Hub — выполнен вход с использованием секретов;
-	•	Build and push Docker image — образ собран и загружен в Docker Hub;
-	•	Deploy (placeholder) — завершение пайплайна.
+	•	`Checkout code` — репозиторий успешно загружен;
+	•	`Set up Docker Buildx` — сборочная среда настроена;
+	•	`Log in to Docker Hub` — выполнен вход с использованием секретов;
+	•	`Build and push Docker image` — образ собран и загружен в Docker Hub;
+	•	`Deploy (placeholder)` — завершение пайплайна.
 
 6. Вывод
 В ходе лабораторной работы изучены основы организации CI/CD-процессов на платформе GitHub Actions.
