@@ -86,11 +86,27 @@ docker run -d \
   --collector.filesystem.mount-points-exclude="^/(sys|proc|dev|host|etc)($$|/)"
 ```
 <img width="1440" height="900" alt="6" src="https://github.com/user-attachments/assets/36ead23f-0787-4792-b98d-73b406ad7498" />
-
-
-
+#### 4. Запуск Grafana
+Создание тома:
+```
+docker volume create grafana-data
+```
+Запуск контейнера Grafana:
+```
+docker run -d \
+  --name grafana \
+  --restart=unless-stopped \
+  --network monitoring \
+  -p 3000:3000 \
+  -v grafana-data:/var/lib/grafana \
+  -e "GF_SECURITY_ADMIN_PASSWORD=admin" \
+  grafana/grafana
+```
+#### 5. Настройка Grafana
 
 <img width="1440" height="900" alt="3" src="https://github.com/user-attachments/assets/7f3ed6ab-23cc-46a0-89d3-53c37a3b69d8" />
+
+#### 6. Создание дашборда
 
 <img width="1440" height="900" alt="4" src="https://github.com/user-attachments/assets/8b7e6b79-5210-41b4-aa5e-5825edb6720b" />
 
